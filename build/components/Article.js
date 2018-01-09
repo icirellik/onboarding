@@ -16,6 +16,8 @@ var _storeProvider = require('./storeProvider');
 
 var _storeProvider2 = _interopRequireDefault(_storeProvider);
 
+var _reactBootstrap = require('react-bootstrap');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const styles = {
@@ -44,36 +46,38 @@ const styles = {
 const dateDisplay = dateString => new Date(dateString).toDateString();
 
 class Article extends _react2.default.PureComponent {
+  constructor(...args) {
+    var _temp;
+
+    return _temp = super(...args), this.state = {
+      open: true
+    }, this.toggleArticle = () => {
+      this.setState({
+        open: !this.state.open
+      });
+    }, _temp;
+  }
+
   render() {
-    const { article, author } = this.props;
+    const { article, author, completed } = this.props;
+    const classes = completed ? 'fa fa-check-circle-o' : 'fa fa-circle-o';
     return _react2.default.createElement(
-      'div',
-      { style: styles.article },
+      _reactBootstrap.Panel,
+      { onToggle: () => {}, style: { marginBottom: "5px" }, id: 'collapsible-panel-example-1', expanded: !this.state.open },
       _react2.default.createElement(
-        'div',
-        { style: styles.title },
+        _reactBootstrap.Panel.Heading,
+        { onClick: this.toggleArticle },
+        _react2.default.createElement('i', { className: classes }),
         article.title
       ),
       _react2.default.createElement(
-        'div',
-        { style: styles.date },
-        dateDisplay(article.date)
-      ),
-      _react2.default.createElement(
-        'div',
-        { style: styles.author },
+        _reactBootstrap.Panel.Collapse,
+        null,
         _react2.default.createElement(
-          'a',
-          { href: author.website },
-          author.firstName,
-          ' ',
-          author.lastName
+          _reactBootstrap.Panel.Body,
+          null,
+          article.body
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { style: styles.body },
-        article.body
       )
     );
   }
@@ -83,7 +87,8 @@ Article.propTypes = {
   article: _propTypes2.default.shape({
     title: _propTypes2.default.string.isRequired,
     body: _propTypes2.default.string.isRequired,
-    date: _propTypes2.default.string.isRequired
+    date: _propTypes2.default.string.isRequired,
+    completed: _propTypes2.default.bool.isRequired
   })
 };
 
