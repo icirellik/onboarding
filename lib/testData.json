@@ -1,5 +1,26 @@
 {
   "data": {
+    "flows" : {
+      "qualityAssurance": [{
+        "title": "Introduction 1-2 weeks",
+        "sections": [{
+          "title": "Communication",
+          "tasks": [{
+            "taskName": "Skype For Business",
+            "details": "Discuss how to format links in Skype for Business. Provide an explanation on how to add a contact in Skype for Business. Provide an explanation on how to get status alerts for a contact in Skype for Business. Provide an explanation on how to access a Persistent Chat in Skype for Business and that only IS can create and add people to Chats."
+          }]
+        }, {
+          "title": "Team",
+          "tasks": [{
+            "taskName": "Outlook Email: Signature (company standard)            ",
+            "details": "Discuss the company standard email signature. Create an out of office reply that includes the Team Leader and Manager and verify that the employee knows when it is needed. Offer a sample of a great email to display the expected structure."
+          }]
+        }]
+      }],
+      "development": {
+
+      }
+    },
     "articles": [
       {
         "id": "95c12a8f6c88953ca8f8a39da25546e6",
