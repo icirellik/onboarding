@@ -13,7 +13,8 @@ const config = {
       'prop-types',
       'axios',
       'lodash.debounce',
-      'lodash.pickby'
+      'lodash.pickby',
+      'react-bootstrap'
     ],
     app: ['./lib/renderers/dom.js']
   },
