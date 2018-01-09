@@ -20,13 +20,9 @@ var _ArticleList = require('./ArticleList');
 
 var _ArticleList2 = _interopRequireDefault(_ArticleList);
 
-var _SearchBar = require('./SearchBar');
+var _Navbar = require('./Navbar');
 
-var _SearchBar2 = _interopRequireDefault(_SearchBar);
-
-var _Timestamp = require('./Timestamp');
-
-var _Timestamp2 = _interopRequireDefault(_Timestamp);
+var _Navbar2 = _interopRequireDefault(_Navbar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -66,8 +62,7 @@ class App extends _react2.default.PureComponent {
     return _react2.default.createElement(
       'div',
       null,
-      _react2.default.createElement(_Timestamp2.default, null),
-      _react2.default.createElement(_SearchBar2.default, null),
+      _react2.default.createElement(_Navbar2.default, null),
       _react2.default.createElement(_ArticleList2.default, {
         articles: articles
       })
