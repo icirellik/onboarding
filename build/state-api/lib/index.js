@@ -52,6 +52,7 @@ class StateApi {
     this.data = {
       articles: this.mapIntoObject(rawData.articles),
       authors: this.mapIntoObject(rawData.authors),
+      flows: rawData.flows,
       searchTerm: '',
       timestamp: new Date()
     };

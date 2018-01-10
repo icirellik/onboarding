@@ -59,15 +59,25 @@ class Article extends _react2.default.PureComponent {
   }
 
   render() {
-    const { article, author, completed } = this.props;
-    const classes = completed ? 'fa fa-check-circle-o' : 'fa fa-circle-o';
+    const { article, author } = this.props;
     return _react2.default.createElement(
       _reactBootstrap.Panel,
-      { onToggle: () => {}, style: { marginBottom: "5px" }, id: 'collapsible-panel-example-1', expanded: !this.state.open },
+      {
+        expanded: !this.state.open,
+        id: 'collapsible-panel-example-1',
+        onToggle: () => {},
+        style: { marginBottom: "10px" }
+      },
       _react2.default.createElement(
         _reactBootstrap.Panel.Heading,
-        { onClick: this.toggleArticle },
-        _react2.default.createElement('i', { className: classes }),
+        {
+          onClick: this.toggleArticle,
+          style: { color: "#4C4F53", fontSize: "3.1em" }
+        },
+        _react2.default.createElement('i', {
+          style: { color: "#4C4F53" },
+          className: article.completed ? 'fa fa-check-circle-o' : 'fa fa-circle-o'
+        }),
         article.title
       ),
       _react2.default.createElement(
@@ -75,7 +85,9 @@ class Article extends _react2.default.PureComponent {
         null,
         _react2.default.createElement(
           _reactBootstrap.Panel.Body,
-          null,
+          {
+            style: { color: "#4C4F53", fontSize: "1.7em" }
+          },
           article.body
         )
       )

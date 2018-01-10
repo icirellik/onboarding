@@ -16,7 +16,7 @@ var _server = require('renderers/server');
 
 var _server2 = _interopRequireDefault(_server);
 
-var _testData = require('./testData');
+var _seedData = require('./seedData');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,8 +31,13 @@ app.get('/', async (req, res) => {
   res.render('index', _extends({}, initialContent));
 });
 
+app.get('/', async (req, res) => {
+  const initialContent = await (0, _server2.default)();
+  res.render('index', _extends({}, initialContent));
+});
+
 app.get('/data', (req, res) => {
-  res.send(_testData.data);
+  res.send(_seedData.data);
 });
 
 app.listen(_config2.default.port, function listenHandler() {

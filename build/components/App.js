@@ -16,9 +16,9 @@ var _lodash = require('lodash.pickby');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _ArticleList = require('./ArticleList');
+var _Flow = require('./Flow');
 
-var _ArticleList2 = _interopRequireDefault(_ArticleList);
+var _Flow2 = _interopRequireDefault(_Flow);
 
 var _Navbar = require('./Navbar');
 
@@ -31,8 +31,8 @@ class App extends _react2.default.PureComponent {
     var _temp;
 
     return _temp = super(...args), this.appState = () => {
-      const { articles, searchTerm } = this.props.store.getState();
-      return { articles, searchTerm };
+      const { articles, flows, searchTerm } = this.props.store.getState();
+      return { articles, flows, searchTerm };
     }, this.state = this.appState(), this.onStoreChange = () => {
       this.setState(this.appState);
     }, _temp;
@@ -52,19 +52,13 @@ class App extends _react2.default.PureComponent {
     this.props.store.unsubscribe(this.subscriptionId);
   }
   render() {
-    let { articles, searchTerm } = this.state;
-    const searchRE = new RegExp(searchTerm, 'i');
-    if (searchTerm) {
-      articles = (0, _lodash2.default)(articles, value => {
-        return value.title.match(searchRE) || value.body.match(searchRE);
-      });
-    }
+    const { flows } = this.state;
     return _react2.default.createElement(
       'div',
       null,
       _react2.default.createElement(_Navbar2.default, null),
-      _react2.default.createElement(_ArticleList2.default, {
-        articles: articles
+      _react2.default.createElement(_Flow2.default, {
+        flows: flows
       })
     );
   }
