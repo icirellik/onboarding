@@ -1,9 +1,29 @@
 {
   "data": {
+    "flows": {
+      "qualityAssurance": [{
+        "title": "Introduction 1-2 weeks",
+        "sections": [{
+          "title": "Communication",
+          "skills": [{
+            "name": "Skype For Business",
+            "details": "Discuss how to format links in Skype for Business. Provide an explanation on how to add a contact in Skype for Business. Provide an explanation on how to get status alerts for a contact in Skype for Business. Provide an explanation on how to access a Persistent Chat in Skype for Business and that only IS can create and add people to Chats."
+          }]
+        }, {
+          "title": "Team",
+          "skills": [{
+            "names": "Outlook Email: Signature (company standard)            ",
+            "details": "Discuss the company standard email signature. Create an out of office reply that includes the Team Leader and Manager and verify that the employee knows when it is needed. Offer a sample of a great email to display the expected structure."
+          }]
+        }]
+      }],
+      "development": {
+
+      }
+    },
     "articles": [
       {
         "id": "95c12a8f6c88953ca8f8a39da25546e6",
-        "completed": false,
         "title": "Introducing React's Error Code System",
         "date": "Mon Jul 11 2016 00:00:00 GMT+0000 (UTC)",
         "authorId": "2c6aa2cfe3449467d329fa17d6ea230f",
@@ -11,7 +31,6 @@
       },
       {
         "id": "cc7781c085cf37aabf120098085ff60c",
-        "completed": true,
         "title": "Mixins Considered Harmful",
         "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
         "authorId": "78ae672985c41fae0ecde0133f41bbfa",
@@ -19,7 +38,6 @@
       },
       {
         "id": "0a9afe5bb4ecbf4f7f1c77611e9bf1f9",
-        "completed": false,
         "title": "Create Apps with No Configuration",
         "date": "Fri Jul 22 2016 00:00:00 GMT+0000 (UTC)",
         "authorId": "78ae672985c41fae0ecde0133f41bbfa",
@@ -27,7 +45,6 @@
       },
       {
         "id": "9b72140f27e62670dd7bdd1a9f61b48e",
-        "completed": false,
         "title": "Relay: State of the State",
         "date": "Fri Aug 05 2016 00:00:00 GMT+0000 (UTC)",
         "authorId": "335fb02ec8f76c8515821ac9f266d276",
@@ -35,7 +52,6 @@
       },
       {
         "id": "f4ab6de6e61c86f03f6fef46f7c407f1",
-        "completed": true,
         "title": "React v15.5.0",
         "date": "Fri Apr 07 2017 00:00:00 GMT+0000 (UTC)",
         "authorId": "d85577ea34ae50f2dac5347b5219aa23",
