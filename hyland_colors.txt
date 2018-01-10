@@ -1,0 +1,10 @@
+Hyland colors:
+
+orange: #FF6C00
+dark blue: #002E3A
+Hyland green: #44C938
+light blue: #05CFF5
+med blue: #045B73
+grey: #4C4F53
+magenta: #7E1B66
+pink: #CC4091
