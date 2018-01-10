@@ -6,6 +6,7 @@
         "sections": [{
           "title": "Communication",
           "skills": [{
+            "completed": false,
             "name": "Skype for Business",
             "details": "Discuss how to format links in Skype for Business. Provide an explanation on how to add a contact in Skype for Business. Provide an explanation on how to get status alerts for a contact in Skype for Business. Provide an explanation on how to access a Persistent Chat in Skype for Business and that only IS can create and add people to Chats.",
             "shadowing": "Mentor",
@@ -18,6 +19,7 @@
         },{
           "title": "Team",
           "skills": [{
+            "completed": false,
             "name": "Team History & Structure",
             "details": "Discuss the history and organization of the team.",
             "shadowing": "Mentor",
@@ -28,6 +30,7 @@
           },{
             "title": "Employee Introduction",
             "skills": [{
+              "completed": false,
               "name": "Scheduling",
               "details": "Employee should utilize Outlook and the Hyland Scheduler to schedule a meeting with their TL and Manager during their 2nd week with the team to discuss the topics below.",
               "shadowing": "Mentor",
@@ -35,6 +38,7 @@
                   "www.test.com"
               ]
             },{
+              "completed": false,
               "name": "Strengths",
               "details": "Leadership  needs to initiate this conversation to determine what the employee's strengths are and what areas need to be focused on.",
               "shadowing": "Team Lead/Manager",
