@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -7,13 +7,19 @@ Object.defineProperty(exports, "__esModule", {
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 class StateApi {
-  constructor(rawData) {
-    this.lookupAuthor = authorId => {
-      return this.data.authors[authorId];
-    };
-
+  constructor({ data, i18n }) {
     this.getState = () => {
       return this.data;
+    };
+
+    this.isAuthenticated = () => {
+      return this.authenticated;
+    };
+
+    this.authenticate = async (username, password) => {
+      return await Q.fcall(() => {
+        return true;
+      });
     };
 
     this.subscribe = cb => {
@@ -41,37 +47,15 @@ class StateApi {
       });
     };
 
-    this.startClock = () => {
-      setInterval(() => {
-        this.mergeWithState({
-          timestamp: new Date()
-        });
-      }, 1000);
-    };
-
+    this.authenticated = false;
     this.data = {
-      articles: this.mapIntoObject(rawData.articles),
-      authors: this.mapIntoObject(rawData.authors),
-      flows: rawData.flows,
-      searchTerm: '',
-      timestamp: new Date()
+      flows: data.flows,
+      i18n
     };
     this.subscriptions = {};
     this.lastSubscriptionId = 0;
-
-    setTimeout(() => {
-      const fakeArticle = _extends({}, rawData.articles[0], {
-        id: 'fakeArticleId'
-      });
-      // this.data.articles[fakeArticle.id] = fakeArticle;
-      this.data = _extends({}, this.data, {
-        articles: _extends({}, this.data.articles, {
-          [fakeArticle.id]: fakeArticle
-        })
-      });
-      this.notifySubscribers();
-    }, 1000);
   }
+
   mapIntoObject(arr) {
     return arr.reduce((acc, curr) => {
       acc[curr.id] = curr;

@@ -26,18 +26,13 @@ app.use(_express2.default.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', async (req, res) => {
-  const initialContent = await (0, _server2.default)();
-  res.render('index', _extends({}, initialContent));
-});
-
-app.get('/', async (req, res) => {
-  const initialContent = await (0, _server2.default)();
-  res.render('index', _extends({}, initialContent));
-});
-
 app.get('/data', (req, res) => {
   res.send(_seedData.data);
+});
+
+app.get('*', async (req, res) => {
+  const initialContent = await (0, _server2.default)(req);
+  res.render('index', _extends({}, initialContent));
 });
 
 app.listen(_config2.default.port, function listenHandler() {

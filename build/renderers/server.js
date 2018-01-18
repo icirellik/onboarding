@@ -20,6 +20,8 @@ var _stateApi = require('state-api');
 
 var _stateApi2 = _interopRequireDefault(_stateApi);
 
+var _reactRouterDom = require('react-router-dom');
+
 var _App = require('components/App');
 
 var _App2 = _interopRequireDefault(_App);
@@ -28,15 +30,28 @@ var _config = require('config');
 
 var _config2 = _interopRequireDefault(_config);
 
+var _i18n = require('../intl/i18n');
+
+var _i18n2 = _interopRequireDefault(_i18n);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const serverRender = async () => {
+const serverRender = async req => {
   const resp = await _axios2.default.get(`http://${_config2.default.host}:${_config2.default.port}/data`);
-  const store = new _stateApi2.default(resp.data);
+  const data = {
+    data: resp.data,
+    i18n: _i18n2.default
+  };
+  const store = new _stateApi2.default(data);
+  const context = {};
 
   return {
-    initialMarkup: _server2.default.renderToString(_react2.default.createElement(_App2.default, { store: store })),
-    initialData: resp.data
+    initialMarkup: _server2.default.renderToString(_react2.default.createElement(
+      _reactRouterDom.StaticRouter,
+      { location: req.url, context: context },
+      _react2.default.createElement(_App2.default, { store: store })
+    )),
+    initialData: data
   };
 };
 
