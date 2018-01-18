@@ -8,6 +8,8 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _reactRouterDom = require('react-router-dom');
+
 var _stateApi = require('state-api');
 
 var _stateApi2 = _interopRequireDefault(_stateApi);
@@ -20,4 +22,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const store = new _stateApi2.default(window.initialData);
 
-_reactDom2.default.render(_react2.default.createElement(_App2.default, { store: store }), document.getElementById('root'));
+_reactDom2.default.hydrate(_react2.default.createElement(
+  _reactRouterDom.BrowserRouter,
+  null,
+  _react2.default.createElement(_App2.default, { store: store })
+), document.getElementById('root'));
